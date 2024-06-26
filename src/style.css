@@ -1,0 +1,19 @@
+body {
+    background-color: rgb(189, 189, 216);
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+
+}
+
+.my-weather-app {
+    background: white;
+    max-width: 600px;
+    margin: 30px auto;
+    box-shadow: 0 30px 50px rgba(65, 50, 100, 0.08);
+    border-radius: 10px;
+    padding: 30px;
+}

@@ -3,38 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="src/style.css">
     <title>My Weather App</title>
 </head>
 <body>
-    <header>
-        <form>
-            <input type="search" placeholder="Enter a city..." required />
-            <input type="submit" value="Search" />
-        </form>
-    </header>
-    <main>
-        <p>
-            Monday 24 June 14:34
-        </p>
-        <h1>Brisbane City</h1>
-        <div>
-            ☁️ 13°C
-            <br />
-            Broken clouds
-        </div>
-        <div>
+    <div class="my-weather-app">
+        <header>
+            <form>
+                <input type="search" placeholder="Enter a city..." required />
+                <input type="submit" value="Search" />
+            </form>
+        </header>
+        <main>
             <p>
-                Humidity: 90%
-                <br />
-                Wind: 2.57 km/h
+                Monday 24 June 14:34
             </p>
-        </div>
-    </main>
-    <footer>
-        This project was coded by
-        <a href="https://github.com/sm-armstrong" target="_blank">Sapphira Armstrong</a> and is
-        <a href="https://github.com/sm-armstrong/my-weather-app-project" target="_blank"> open-sourced on GitHub</a> and
-        <a href="https://sapphira-shecodes-weather-app.netlify.app/" target="_blank">hosted on Netlify</a>
-    </footer>
+            <h1>Brisbane City</h1>
+            <div>
+                ☁️ 13°C
+                <br />
+                Broken clouds
+            </div>
+            <div>
+                <p>
+                    Humidity: 90%
+                    <br />
+                    Wind: 2.57 km/h
+                </p>
+            </div>
+        </main>
+        <footer>
+            This project was coded by
+            <a href="https://github.com/sm-armstrong" target="_blank">Sapphira Armstrong</a> and is
+            <a href="https://github.com/sm-armstrong/my-weather-app-project" target="_blank"> open-sourced on GitHub</a> and
+            <a href="https://sapphira-shecodes-weather-app.netlify.app/" target="_blank">hosted on Netlify</a>
+        </footer>
+    </div>
 </body>
 </html>
