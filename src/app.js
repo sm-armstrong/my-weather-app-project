@@ -56,6 +56,16 @@ function handleSearchSubmit(event) {
     searchCity(searchInput.value);
 }
 
+function formatDay(timestamp) {
+    let date = new Date(timestamp * 1000);
+    let days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+
+    let day = days[date.getDay()];
+    let dayDate = date.getDate();
+
+    return `${day} ${dayDate}`;
+}
+
 function getForcast(city) {
     let apiKey = "a7d040o4fb53dfe38da1bd913t25290a";
     let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
@@ -63,25 +73,24 @@ function getForcast(city) {
 }
 
 function displayForecast(response) {
-    console.log(response.data);
-
-    let days = ['Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
     let forecastHtml = "";
 
-    days.forEach(function (day) {
-        forecastHtml += 
-            `
-                <div class="weather-forecast-info">
-                    <div class="weather-forecast-day">${day} 27</div>
-                    <div class="weather-forecast-icon">🌦️</div>
-                    <div class="weather-forecast-temperatures">
-                        <div class="weather-forecast-temperature">
-                            <strong>15°</strong> 
+    response.data.daily.forEach(function (day, index) {
+        if (index < 5) {
+            forecastHtml += 
+                `
+                    <div class="weather-forecast-info">
+                        <div class="weather-forecast-day">${formatDay(day.time)}</div>
+                        <img src="${day.condition.icon_url}" class="weather-forecast-icon" />
+                        <div class="weather-forecast-temperatures">
+                            <div class="weather-forecast-temperature">
+                                <strong>${Math.round(day.temperature.maximum)}°</strong> 
+                            </div>
+                            <div class="weather-forecast-temperature">${Math.round(day.temperature.minimum)}°</div>
                         </div>
-                        <div class="weather-forecast-temperature">9°</div>
                     </div>
-                </div>
-            `;
+                `;
+        }
     });
 
     let forecastElement = document.querySelector("#forecast");
